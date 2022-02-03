@@ -28,7 +28,7 @@ public class EtlapDb {
         return etelek;
     }
     public int etelHozzaadasa(String nev, String leiras, int ar, String kategoria) throws SQLException {
-        String sql = "INSERT INTO etlap(cim, kategoria, hossz, ertekeles) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO etlap(nev, leiras, ar, kategoria) VALUES (?,?,?,?)";
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setString(1, nev);
         stmt.setString(2, leiras);
@@ -36,6 +36,7 @@ public class EtlapDb {
         stmt.setString(4, kategoria);
         return stmt.executeUpdate();
     }
+
 
 
 }
