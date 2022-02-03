@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -39,5 +40,11 @@ public abstract class Controller {
         Controller controller = fxmlLoader.getController();
         controller.stage = stage;
         return controller;
+    }
+    protected void alert(String uzenet) {
+        Alert alert = new Alert(Alert.AlertType.NONE);
+        alert.setContentText(uzenet);
+        alert.getButtonTypes().add(ButtonType.OK);
+        alert.show();
     }
 }

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="421.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="421.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.etllap.controllers.HozzaadController">
    <children>
       <HBox prefHeight="38.0" prefWidth="600.0">
          <children>
@@ -71,7 +71,7 @@
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" prefWidth="230.0" text="Hozzáad">
+            <Button mnemonicParsing="false" prefWidth="230.0" onAction="#hozzaadButtonClick" text="Hozzáad">
                <HBox.margin>
                   <Insets left="100.0" />
                </HBox.margin>
