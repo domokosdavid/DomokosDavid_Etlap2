@@ -1,17 +1,23 @@
 package com.example.etllap.controllers;
 
+import com.example.etllap.Controller;
+import com.example.etllap.Etel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
-public class HelloController {
+public class HelloController extends Controller {
     @FXML
-    private Label welcomeText;
+    private TableView<Etel> etelTable;
+    @FXML
+    private TableColumn<Etel, String> colNev;
+    @FXML
+    private TableColumn<Etel, Integer> colAr;
+    @FXML
+    private TableColumn<Etel, String> colKategoria;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
 
     public void felvetelButton(ActionEvent actionEvent) {
     }

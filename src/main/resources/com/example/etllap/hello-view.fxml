@@ -47,11 +47,11 @@
         </panes>
       </Accordion>
       <HBox prefHeight="100.0" prefWidth="200.0" />
-      <TableView prefHeight="200.0" prefWidth="200.0">
+      <TableView prefHeight="200.0" prefWidth="200.0" fx:id="etelTable">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-            <TableColumn prefWidth="75.0" text="Column X" />
+          <TableColumn prefWidth="75.0" text="Név" fx:id="colNev"/>
+          <TableColumn prefWidth="75.0" text="Kategória" fx:id="colKategoria"/>
+            <TableColumn prefWidth="75.0" text="Ár (Ft)" fx:id="colAr"/>
         </columns>
          <VBox.margin>
             <Insets />
