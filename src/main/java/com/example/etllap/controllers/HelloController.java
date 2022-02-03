@@ -35,6 +35,17 @@ public class HelloController extends Controller {
             hibaKiir(e);
         }
     }
+    @FXML
+    public void onHozzadasButtonClick(ActionEvent actionEvent) {
+        try {
+            Controller hozzadas = ujAblak("hozzaad-view.fxml", "Étel hozzáadása",
+                    320, 400);
+            hozzadas.getStage().setOnCloseRequest(event -> etlapListaFeltolt());
+            hozzadas.getStage().show();
+        } catch (Exception e) {
+            hibaKiir(e);
+        }
+    }
 
 
     public void felvetelButton(ActionEvent actionEvent) {
