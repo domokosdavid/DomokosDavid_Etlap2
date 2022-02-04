@@ -68,7 +68,7 @@
                   <Insets left="30.0" top="10.0" />
                </HBox.margin>
             </Label>
-            <Spinner prefWidth="230.0" fx:id="inputAr" editable="true" >
+            <Spinner prefWidth="230.0" fx:id="inputAr" editable="true" amountToStepBy="10" initialValue="1000" max="9999" min="1">
                <HBox.margin>
                   <Insets left="30.0" top="10.0" />
                </HBox.margin>
