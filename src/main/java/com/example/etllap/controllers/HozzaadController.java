@@ -1,6 +1,7 @@
 package com.example.etllap.controllers;
 
 import com.example.etllap.Controller;
+import com.example.etllap.Etel;
 import com.example.etllap.EtlapDb;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -34,10 +35,26 @@ public class HozzaadController extends Controller {
     @FXML
     public void hozzaadButtonClick(ActionEvent actionEvent){
         String nev = inputNev.getText().toString();
+        if (nev.isEmpty()){
+            alert("A név mező nem lehet üres!");
+            return;
+        }
         String leiras = inputLeiras.getText().toString();
+        if (leiras.isEmpty()){
+            alert("A leírás mező nem lehet üres!");
+            return;
+        }
         String kategoria = inputKategoria.getSelectionModel().getSelectedItem();
+        if (kategoria == null){
+            alert("Nem lehet üres a kategória választó!");
+            return;
+        }
 
         int ar = inputAr.getValue();
+        if (ar <= 0){
+            alert("Az ár nem lehet kisebb 0-nál, de 0 sem lehet!");
+            return;
+        }
         try {
             int siker = db.etelHozzaadasa(nev, leiras, ar, kategoria);
             if (siker == 1){

@@ -36,6 +36,9 @@ public class HelloController extends Controller {
         }
     }
 
+    public TableColumn<Etel, String> getColNev() {
+        return colNev;
+    }
 
     public void felvetelButton(ActionEvent actionEvent) {
         try {
