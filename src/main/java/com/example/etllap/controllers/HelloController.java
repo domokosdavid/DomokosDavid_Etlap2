@@ -53,10 +53,12 @@ public class HelloController extends Controller {
 
     public void torlesButton(ActionEvent actionEvent) throws SQLException{
         Etel etel = etelTable.getSelectionModel().getSelectedItem();
-        if (beleegyezes("Biztos, hogy ki szeretnéd törölni a kiválasztott ételt?")){
-            db.etelTorles(etel.getId());
-            etlapListaFeltolt();
-            return;
+        if (etel != null){
+            if (beleegyezes("Biztos, hogy ki szeretnéd törölni a kiválasztott ételt?")){
+                db.etelTorles(etel.getId());
+                etlapListaFeltolt();
+                return;
+            }
         }
         alert("Válaszd ki a törölni kívánt ételt!");
     }
