@@ -8,6 +8,7 @@ import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Optional;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -46,5 +47,13 @@ public abstract class Controller {
         alert.setContentText(uzenet);
         alert.getButtonTypes().add(ButtonType.OK);
         alert.show();
+    }
+
+    protected boolean beleegyezes(String uzenet){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Biztos, hogy törölni szeretnéd?");
+        alert.setHeaderText(uzenet);
+        Optional<ButtonType> result = alert.showAndWait();
+        return  result.get() == ButtonType.OK;
     }
 }
