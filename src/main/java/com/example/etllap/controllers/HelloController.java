@@ -51,7 +51,13 @@ public class HelloController extends Controller {
         }
     }
 
-    public void torlesButton(ActionEvent actionEvent) {
+    public void torlesButton(ActionEvent actionEvent) throws SQLException{
+        Etel etel = etelTable.getSelectionModel().getSelectedItem();
+        if (etel != null){
+            db.etelTorles(etel.getId());
+            etlapListaFeltolt();
+            return;
+        }
     }
 
     private void etlapListaFeltolt(){
