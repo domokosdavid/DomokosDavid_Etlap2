@@ -54,6 +54,6 @@ public abstract class Controller {
         alert.setTitle("Biztos, hogy törölni szeretnéd?");
         alert.setHeaderText(uzenet);
         Optional<ButtonType> result = alert.showAndWait();
-        return  result.get() == ButtonType.OK;
+        return  result.get() == ButtonType.YES;
     }
 }
