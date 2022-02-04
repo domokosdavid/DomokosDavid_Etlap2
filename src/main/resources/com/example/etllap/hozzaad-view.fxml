@@ -11,6 +11,8 @@
 <?import javafx.scene.layout.VBox?>
 
 
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="421.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.etllap.controllers.HozzaadController">
    <children>
       <HBox prefHeight="38.0" prefWidth="600.0">
@@ -20,7 +22,7 @@
                   <Insets left="30.0" top="10.0" />
                </HBox.margin>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="290.0" promptText="Név">
+            <TextField prefHeight="25.0" prefWidth="290.0" promptText="Név" fx:id="inputNev">
                <HBox.margin>
                   <Insets left="15.0" top="10.0" />
                </HBox.margin>
@@ -34,7 +36,7 @@
                   <Insets left="30.0" top="10.0" />
                </HBox.margin>
             </Label>
-            <TextArea prefHeight="100.0" prefWidth="294.0" promptText="Leírás">
+            <TextArea prefHeight="100.0" prefWidth="294.0" promptText="Leírás" fx:id="inputLeiras">
                <HBox.margin>
                   <Insets top="10.0" />
                </HBox.margin>
@@ -48,10 +50,14 @@
                   <Insets left="30.0" top="10.0" />
                </HBox.margin>
             </Label>
-            <ChoiceBox prefHeight="25.0" prefWidth="230.0">
-               <HBox.margin>
-                  <Insets left="15.0" top="10.0" />
-               </HBox.margin>
+            <ChoiceBox prefHeight="25.0" prefWidth="230.0" fx:id="inputKategoria">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="előétel"/>
+                     <String fx:value="főétel"/>
+                     <String fx:value="desszert"/>
+                  </FXCollections>
+               </items>
             </ChoiceBox>
          </children>
       </HBox>
@@ -62,7 +68,7 @@
                   <Insets left="30.0" top="10.0" />
                </HBox.margin>
             </Label>
-            <Spinner prefWidth="230.0">
+            <Spinner prefWidth="230.0" fx:id="inputAr" editable="true" >
                <HBox.margin>
                   <Insets left="30.0" top="10.0" />
                </HBox.margin>

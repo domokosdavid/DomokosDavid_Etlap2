@@ -20,19 +20,16 @@ public class HozzaadController extends Controller {
     @FXML
     private Spinner<Integer> inputAr;
 
+    private EtlapDb db;
+
+    @FXML
     public void hozzaadButtonClick(ActionEvent actionEvent) {
-        String nev = inputNev.getText().trim();
-        String leiras = inputLeiras.getText().trim();
-        Object kategoria = inputKategoria.getValue();
-        int ar = 0;
+        String nev = inputNev.getText().toString();
+        String leiras = inputLeiras.getText().toString();
+        Object kategoria = inputKategoria.getValue().toString();
+        int ar = inputAr.getValue();
         try {
-            ar = inputAr.getValue();
-        } catch (NullPointerException ex){
-            alert("Ár megadása kötelező");
-            return;
-    }
-        try {
-            EtlapDb db = new EtlapDb();
+            db = new EtlapDb();
             int siker = db.etelHozzaadasa(nev, leiras, ar, (String) kategoria);
             if (siker == 1){
                 alert("Film hozzáadása sikeres");
